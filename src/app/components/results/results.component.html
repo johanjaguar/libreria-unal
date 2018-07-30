@@ -1,3 +1,13 @@
-<p>
-  results works!
-</p>
+<div *ngFor="let libro of _libros | async; let i = index" class="libro libro__{{i}}">
+  <div class="libro__izquierda">
+      <p class='libro__titulo'>{{libro.titulo}}</p>
+      <p class='libro__autoryanio'>
+        <span class='libro__autor'>{{libro.autor}}</span>
+        <span class='libro__anio'>{{libro.anio}}</span>
+      </p>
+  </div>
+  <div class="libro__derecha">
+    <div class="libro__icono libro__{{ libro.categoria | lowercase }}"></div>
+
+  </div>
+</div>
