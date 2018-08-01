@@ -24,19 +24,17 @@ export class ResultsComponent implements OnInit {
     this.searchValue = '';
     this._libros = this._ser.getJSON();
     console.log(this._libros);
-    this.searchData.currentMessage.subscribe((message) => {
+    this.searchData.currentMessage.subscribe( (message) => {
       this.searchValue = message;
       this._libros = this._libros.pipe(
         map(items => items.filter(
-          (item => item.autor &&
-            (
-              item.autor.indexOf(this.searchValue) !== -1
-            ))
-          ||
-          (item => item.titulo &&
-            (
-              item.titulo.indexOf(this.searchValue) !== -1
-            ))
+          item => (item.autor || item.titulo) && 
+          ((
+            item.autor.indexOf(this.searchValue) !== -1 ||
+            item.titulo.indexOf(this.searchValue) !== -1
+          ))  
+          
+          
         ))
       );
 
