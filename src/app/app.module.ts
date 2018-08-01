@@ -28,7 +28,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+
+    FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
