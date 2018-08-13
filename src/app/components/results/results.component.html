@@ -5,6 +5,7 @@
         <span class='libro__autor'>Autor: {{libro.autor}}</span>
         <span class='libro__anio'>Año: {{libro.anio}}</span>
       </p>
+      <ul><li *ngFor='let palabra of libro.palabras__clave.split(", ")'>{{palabra}}</li></ul>
   </div>
   <div class="libro__derecha">
     <div class="libro__icono libro__{{ libro.categoria | lowercase }}"></div>
