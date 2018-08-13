@@ -13,7 +13,6 @@ export class SearchComponent implements OnInit {
   constructor(
     private searchData: SearchService
   ) { }
-  
   ngOnInit() {
     this.searchData.currentMessage.subscribe(message => this.searchValue = message);
   }

@@ -19,7 +19,6 @@ export class ResultsComponent implements OnInit {
     public _ser: GetDataService,
     public router: Router
   ) { }
-
   ngOnInit() {
     this.searchValue = '';
     this._libros = this._ser.getJSON();
@@ -28,15 +27,14 @@ export class ResultsComponent implements OnInit {
       this.searchValue = message;
       this._libros = this._libros.pipe(
         map(items => items.filter(
-          item => ( item.autor || item.titulo || (item.palabras__clave.lenght > 0) ) &&
+          item => ( item.autor || item.titulo || item.palabras__clave ) &&
           ((
             item.autor.indexOf(this.searchValue) !== -1 ||
             item.titulo.indexOf(this.searchValue) !== -1 ||
-            item.palabras__clave.split(', ').indexOf(this.searchValue)
+            item.palabras__clave.indexOf(this.searchValue) !== -1
           ))
         ))
       );
-
     });
   }
 
