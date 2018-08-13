@@ -1,3 +1,1 @@
-<p>
-  search works!
-</p>
+<input [(ngModel)]="searchValue" type="text" [formControl]="stateCtrl" placeholder="Buscar Libros" (keyup)="newMessage()">
