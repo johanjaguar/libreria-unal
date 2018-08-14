@@ -12,6 +12,8 @@ import { SearchComponent } from './components/search/search.component';
 import { ResultsComponent } from './components/results/results.component';
 import { ResultComponent } from './components/result/result.component';
 import { BookComponent } from './components/book/book.component';
+import { LogoComponent } from './components/logo/logo.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: '', component: ResultsComponent },
@@ -24,7 +26,9 @@ const appRoutes: Routes = [
     SearchComponent,
     ResultsComponent,
     ResultComponent,
-    BookComponent
+    BookComponent,
+    LogoComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

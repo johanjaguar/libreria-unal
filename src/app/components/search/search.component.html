@@ -1,1 +1,7 @@
-<input [(ngModel)]="searchValue" type="text" [formControl]="stateCtrl" placeholder="Buscar Libros" (keyup)="newMessage()">
+<div class="search">
+  <div class="search__container container">
+    <app-logo></app-logo>
+    <input [(ngModel)]="searchValue" type="text" [formControl]="stateCtrl" placeholder="Buscar Libros" (keyup)="newMessage()" class="search__input">
+  </div>
+  
+</div>
