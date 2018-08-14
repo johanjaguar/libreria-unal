@@ -11,6 +11,6 @@ export class GetDataService {
     });
   }
   public getJSON(): Observable<any> {
-    return this.http.get('../assets/data/books.json');
+    return this.http.get('https://johanjaguar.github.io/libreria-unal/assets/data/books.json');
   }
 }
